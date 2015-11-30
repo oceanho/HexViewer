@@ -19,15 +19,20 @@ namespace HexViewer
         private void btn_Select_file_Click(object sender, EventArgs e)
         {
 
-            using (OpenFileDialog ofd = new OpenFileDialog())
+            using (OpenFileDialog fileSelectDialog = new OpenFileDialog())
             {
-                ofd.Multiselect = false;
-                ofd.FileOk += ofd_FileOk;
-                ofd.ShowDialog();
+                fileSelectDialog.Multiselect = false;
+                fileSelectDialog.CheckFileExists = true;
+                                
+                fileSelectDialog.FilterIndex = 0;                
+                fileSelectDialog.FileOk += fileSelectDialog_FileOk;
+                fileSelectDialog.Filter = "(*.dll,*.exe)|*.exe;*.dll|(所有文件)|*.*";
+                fileSelectDialog.InitialDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                fileSelectDialog.ShowDialog();
             }
         }
 
-        void ofd_FileOk(object sender, CancelEventArgs e)
+        void fileSelectDialog_FileOk(object sender, CancelEventArgs e)
         {
             tb_filepath.Text = (sender as OpenFileDialog).FileName;
             GenerateHexString();
@@ -61,6 +66,12 @@ namespace HexViewer
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/oceanho/HexViewer");
+        }
+
+        private void tb_filepath_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            tb_filepath.Focus();
+            tb_filepath.SelectAll();
         }
     }
 }

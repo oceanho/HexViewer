@@ -64,6 +64,7 @@
             this.tb_filepath.Name = "tb_filepath";
             this.tb_filepath.Size = new System.Drawing.Size(479, 21);
             this.tb_filepath.TabIndex = 0;
+            this.tb_filepath.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tb_filepath_MouseDoubleClick);
             // 
             // richTextBox1
             // 
@@ -116,7 +117,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "HexMainform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "File Hex String Viewer（NET ）";
+            this.Text = "File Hex String Viewer（.NET）";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
