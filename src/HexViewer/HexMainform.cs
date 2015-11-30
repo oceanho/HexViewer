@@ -27,7 +27,7 @@ namespace HexViewer
                 fileSelectDialog.FilterIndex = 0;                
                 fileSelectDialog.FileOk += fileSelectDialog_FileOk;
                 fileSelectDialog.Filter = "(*.dll,*.exe)|*.exe;*.dll|(所有文件)|*.*";
-                fileSelectDialog.InitialDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                fileSelectDialog.InitialDirectory = this.tb_filepath.Text.Length < 1 ? AppDomain.CurrentDomain.BaseDirectory : this.tb_filepath.Text;
                 fileSelectDialog.ShowDialog();
             }
         }
@@ -39,11 +39,10 @@ namespace HexViewer
         }
 
         private void GenerateHexString()
-        {
-            string path = tb_filepath.Text;
-            if (!File.Exists(path))
+        {            
+            if (!File.Exists(tb_filepath.Text))
                 MessageBox.Show("出大事了", "我干，路径文件不存在", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            byte[] bytes = File.ReadAllBytes(path);
+            byte[] bytes = File.ReadAllBytes(tb_filepath.Text);
             StringBuilder hexSb = new StringBuilder();
             for (int i = 0; i < bytes.Length; i++)
                 hexSb.Append(Convert.ToString(bytes[i], 16).ToUpper().PadLeft(2, '0'));
@@ -72,6 +71,11 @@ namespace HexViewer
         {
             tb_filepath.Focus();
             tb_filepath.SelectAll();
+        }
+
+        private void btn_Gernate_Click(object sender, EventArgs e)
+        {
+            GenerateHexString();
         }
     }
 }

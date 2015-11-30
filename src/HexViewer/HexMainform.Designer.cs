@@ -35,6 +35,7 @@
             this.btn_CopyHex = new System.Windows.Forms.Button();
             this.btn_SelectHex = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btn_Gernate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,13 +98,23 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(82, 273);
+            this.linkLabel1.Location = new System.Drawing.Point(12, 272);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(347, 12);
+            this.linkLabel1.Size = new System.Drawing.Size(317, 12);
             this.linkLabel1.TabIndex = 3;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "source code link （https://github.com/oceanho/HexViewer）";
+            this.linkLabel1.Text = "source code （https://github.com/oceanho/HexViewer）";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // btn_Gernate
+            // 
+            this.btn_Gernate.Location = new System.Drawing.Point(354, 262);
+            this.btn_Gernate.Name = "btn_Gernate";
+            this.btn_Gernate.Size = new System.Drawing.Size(75, 27);
+            this.btn_Gernate.TabIndex = 2;
+            this.btn_Gernate.Text = "生成Hex";
+            this.btn_Gernate.UseVisualStyleBackColor = true;
+            this.btn_Gernate.Click += new System.EventHandler(this.btn_Gernate_Click);
             // 
             // HexMainform
             // 
@@ -112,6 +123,7 @@
             this.ClientSize = new System.Drawing.Size(603, 302);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btn_SelectHex);
+            this.Controls.Add(this.btn_Gernate);
             this.Controls.Add(this.btn_CopyHex);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox1);
@@ -134,6 +146,7 @@
         private System.Windows.Forms.Button btn_CopyHex;
         private System.Windows.Forms.Button btn_SelectHex;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button btn_Gernate;
     }
 }
 
