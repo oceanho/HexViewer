@@ -57,5 +57,10 @@ namespace HexViewer
             richTextBox1.Focus();
             richTextBox1.SelectAll();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/oceanho/HexViewer");
+        }
     }
 }

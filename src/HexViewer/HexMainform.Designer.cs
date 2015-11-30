@@ -34,6 +34,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btn_CopyHex = new System.Windows.Forms.Button();
             this.btn_SelectHex = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,20 +93,34 @@
             this.btn_SelectHex.UseVisualStyleBackColor = true;
             this.btn_SelectHex.Click += new System.EventHandler(this.btn_SelectHex_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(82, 273);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(347, 12);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "source code link （https://github.com/oceanho/HexViewer）";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // HexMainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 302);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btn_SelectHex);
             this.Controls.Add(this.btn_CopyHex);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "HexMainform";
-            this.Text = ".NET File Hex String Viewer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "File Hex String Viewer（NET ）";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -117,6 +132,7 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button btn_CopyHex;
         private System.Windows.Forms.Button btn_SelectHex;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
